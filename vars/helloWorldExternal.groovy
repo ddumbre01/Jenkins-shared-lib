@@ -1,6 +1,6 @@
 def call(Map config) {
  sh "echo from external"
- def config = [name: 'hello-world.sh']
- loadExternalFile(config)
+ def loadConfig = [name: 'hello-world.sh']
+ loadExternalFile(loadConfig)
  sh "./hello-world.sh ${config.name} ${config.day}"
 }
