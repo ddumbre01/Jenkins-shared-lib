@@ -4,5 +4,5 @@ def call(Map config) {
   def scriptContent = libraryResource "scripts/${config.name}"
   echo "${scriptContent}"
   writeFile file: '${config.name}', text: scriptContent
-  sh "chmod a+x ./hello-world.sh"
+  sh "chmod a+x ./'${config.name}'"
 }
