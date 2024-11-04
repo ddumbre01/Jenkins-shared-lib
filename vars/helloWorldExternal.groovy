@@ -1,3 +1,3 @@
-def call() {
+def call(Map : config = [:]) {
  sh "echo from external"
 }
