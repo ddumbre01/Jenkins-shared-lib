@@ -1,4 +1,4 @@
-def call() {
-  sh "echo hello from shared lib"
+def call(String name) {
+  sh "echo hello from shared lib: ${name}"
 }
 
