@@ -1,9 +1,9 @@
-def call(String imageName, String tag, String registry = 'docker.io', String dockerCredentialsId = 'docker-hub-credentials') {
+def call(String imageName, String tag, String registry = 'docker.io', String dockerCredentialsId = 'dockerhub') {
    echo 'Pushing docker file to docker hub..'
    withCredentials([usernamePassword(credentialsId: dockerCredentialsId) {
       docker.withRegistry('https://index.docker.io/v1/', dockerCredentialsId) {
                             sh """
-                                docker push ${DOCKER_USER_NAME}/${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
+                                docker push ${registry}/${imageName}:${tag}
                             """
                   }
        }
